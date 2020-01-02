@@ -1,8 +1,5 @@
 class Graph {
-  constructor(numOfVertices) {
-    this.numOfVertices = numOfVertices
-    this.AdjacentList = new Map()
-  }
+  constructor(numOfVertices) {}
 
   // functions to be implemented
   // addVertex(v)
