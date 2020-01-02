@@ -9,10 +9,7 @@ class Graph {
   // addEdge(v, w)
   // printGraph()
 
-  addVertex(v) {
-    this.AdjacentList.set(v, [])
-    console.log('Map of verices', this.AdjacentList)
-  }
+  addVertex(v) {}
 
   addEdge(v, w) {
     /*
@@ -20,23 +17,9 @@ class Graph {
     w = dest
     */
     // Get the list for vertex v and put the vertex W denoting edge between v and w
-    this.AdjacentList.get(v).push(w)
   }
-  printGraph() {
-    const getKeys = this.AdjacentList.keys()
-    // iterate over the vertices
-    for (const i of getKeys) {
-      // get the corresponding adjacency list for the vertex
-      let get_values = this.AdjacentList.get(i)
-      let conc = ''
-      // Iterate over the adjacency list
-      for (const j of get_values) {
-        conc += j + ' '
-        // Print the vertext and it's adjacency list
-        console.log('Conact ', `${i} => ${conc}`)
-      }
-    }
-  }
+
+  printGraph() {}
 }
 
 const graph = new Graph(6)
