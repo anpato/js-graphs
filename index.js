@@ -1,12 +1,18 @@
 class Graph {
-  constructor(numOfVertices) {}
+  constructor(numOfVertices) {
+    this.numOfVertices = numOfVertices
+    this.AdjacentList = new Map()
+  }
 
   // functions to be implemented
   // addVertex(v)
   // addEdge(v, w)
   // printGraph()
 
-  addVertex(v) {}
+  addVertex(v) {
+    this.AdjacentList.set(v, [])
+    // console.log(this.AdjacentList)
+  }
 
   addEdge(v, w) {
     /*
@@ -14,9 +20,23 @@ class Graph {
     w = dest
     */
     // Get the list for vertex v and put the vertex W denoting edge between v and w
+    this.AdjacentList.get(v).push(w)
+    // console.log(this.AdjacentList)
   }
 
-  printGraph() {}
+  printGraph() {
+    const getKeys = this.AdjacentList.keys()
+    // console.log(getKeys)
+    for (const i of getKeys) {
+      let get_values = this.AdjacentList.get(i)
+      // console.log(get_values)
+      let conc = ''
+      for (const j of get_values) {
+        conc += j + ' '
+        console.log('Conact', `${i} => ${conc}`)
+      }
+    }
+  }
 }
 
 const graph = new Graph(6)
